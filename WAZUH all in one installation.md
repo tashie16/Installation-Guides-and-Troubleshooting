@@ -15,13 +15,13 @@ $curl -sO https://packages.wazuh.com/4.10/config.yml
 ----
 #### Step 2: Open the config.yaml and set the indexer, manager and dashboard <ip-address> following the server static ip address 
 ----
-#### Step 3: Run the Wazuh installation assistant with the option --generate-config-files to generate the Wazuh cluster key, certificates, and passwords necessary for installation. You can find these files in ./wazuh-install-files.tar.
-----
+#### Step 3: Run the Wazuh installation assistant with the option --generate-config-files to generate the Wazuh cluster key, certificates, and passwords necessary for installation. You can find these files in ./wazuh-install-files.tar. 
 $bash wazuh-install.sh --generate-config-files
+
 ----
 #### Step 4: install the WAZUH all in one installation which automatically installs the dashboard, manager and indexer. Enter the directory where the wazuh-install.sh is located and run the following line.
-
 $sudo bash ./wazuh-install.sh -a
+
 ----
 #### Step 5: After installation, the login credentials will be provided in order to login to the website. and also website ip address will be provided (usually the server ip address). 
 ----
@@ -29,6 +29,7 @@ $sudo bash ./wazuh-install.sh -a
 ----
 #### 1. Run the following command to verify that Filebeat is successfully installed. 
 $filebeat test output
+
 ----
 #### If there are any errors, try the following
 - Ensure filebeat is installed and is the same version as elasticsearch. *When i was installing WAZUH using the all in one, i had to manually install filebeat for it to work*
@@ -38,7 +39,9 @@ $filebeat test output
 ----
 #### If you face this error Error: No template found for the selected index-pattern "wazuh-alerts-*
 You can  manually add the index by running the following command:
-curl https://raw.githubusercontent.com/wazuh/wazuh/v4.7.4/extensions/elasticsearch/7.x/wazuh-template.json | curl -X PUT "https://localhost:9200/_template/wazuh" -H 'Content-Type: application/json' -d @- -u <user>:<password> -k  
+
+curl https://raw.githubusercontent.com/wazuh/wazuh/v4.7.4/extensions/elasticsearch/7.x/wazuh-template.json | curl -X PUT "https://localhost:9200/_template/wazuh" -H 'Content-Type: application/json' -d @- -u <user>:<password> -k 
+
 ----
 ### Here is the source of the reference link: https://groups.google.com/g/wazuh/c/2voSddp8ml8
 
