@@ -12,7 +12,7 @@ Installing WAZUH on the Linux based systems can seem to be a challenging at firs
 $curl -sO https://packages.wazuh.com/4.10/wazuh-install.sh
 $curl -sO https://packages.wazuh.com/4.10/config.yml
 
-
+-- 
 #### Step 2: Open the config.yaml and set the indexer, manager and dashboard <ip-address> following the server static ip address
 
 #### Step 3: Run the Wazuh installation assistant with the option --generate-config-files to generate the Wazuh cluster key, certificates, and passwords necessary for installation. You can find these files in ./wazuh-install-files.tar.
