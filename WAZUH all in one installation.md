@@ -14,19 +14,19 @@ $curl -sO https://packages.wazuh.com/4.10/config.yml
 
 --- 
 #### Step 2: Open the config.yaml and set the indexer, manager and dashboard <ip-address> following the server static ip address
-
+--- 
 #### Step 3: Run the Wazuh installation assistant with the option --generate-config-files to generate the Wazuh cluster key, certificates, and passwords necessary for installation. You can find these files in ./wazuh-install-files.tar.
 
 $bash wazuh-install.sh --generate-config-files
-
+---
 #### Step 4: install the WAZUH all in one installation which automatically installs the dashboard, manager and indexer. Enter the directory where the wazuh-install.sh is located and run the following line.
 
 $sudo bash ./wazuh-install.sh -a
-
+---
 #### Step 5: After installation, the login credentials will be provided in order to login to the website. and also website ip address will be provided (usually the server ip address). 
-
+----
 #### Step 6: Try to login to the website and check if all components are correctly loaded,if yes then you are done!! However, if there any error occurs here are some troubleshooting steps.
-
+----
 #### 1. Run the following command to verify that Filebeat is successfully installed. 
 $filebeat test output
 
